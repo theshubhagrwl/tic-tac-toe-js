@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
+}
+.main-box {
+  background-color: black;
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  /* gap: 10px; */
+  /* grid-auto-rows: minmax(100px, auto); */
+}
+
+.inner-box {
+  border: 1px solid red;
+  height: 100px;
+  width: 100px;
+}
