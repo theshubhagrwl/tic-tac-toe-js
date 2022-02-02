@@ -1,3 +1,7 @@
+:root {
+  --cell-size: 100px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -9,16 +13,30 @@ body {
   justify-content: center;
   background-color: whitesmoke;
 }
+
 .main-box {
-  background-color: black;
   display: grid;
   grid-template-columns: repeat(3, 100px);
-  /* gap: 10px; */
-  /* grid-auto-rows: minmax(100px, auto); */
 }
 
 .inner-box {
-  border: 1px solid red;
-  height: 100px;
-  width: 100px;
+  height: var(--cell-size);
+  width: var(--cell-size);
+  border: 1px solid black;
+}
+.inner-box:nth-child(1),
+.inner-box:nth-child(2),
+.inner-box:nth-child(3) {
+  border-top: none;
+}
+.inner-box:nth-child(3n + 1) {
+  border-left: none;
+}
+.inner-box:nth-child(3n + 0) {
+  border-right: none;
+}
+.inner-box:nth-child(7),
+.inner-box:nth-child(8),
+.inner-box:nth-child(9) {
+  border-bottom: none;
 }
