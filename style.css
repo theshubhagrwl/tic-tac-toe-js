@@ -1,5 +1,6 @@
 :root {
   --cell-size: 100px;
+  --mark-size: 90px;
 }
 
 * {
@@ -23,7 +24,18 @@ body {
   height: var(--cell-size);
   width: var(--cell-size);
   border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
 }
+
+.inner-box.x,
+.inner-box.circle {
+  cursor: not-allowed;
+}
+
 .inner-box:nth-child(1),
 .inner-box:nth-child(2),
 .inner-box:nth-child(3) {
@@ -39,4 +51,38 @@ body {
 .inner-box:nth-child(8),
 .inner-box:nth-child(9) {
   border-bottom: none;
+}
+
+/* X mark */
+.inner-box.x::before,
+.inner-box.x::after {
+  content: "";
+  position: absolute;
+  width: calc(var(--mark-size) * 0.15);
+  height: var(--mark-size);
+  background-color: black;
+}
+.inner-box.x::before {
+  transform: rotate(45deg);
+}
+.inner-box.x::after {
+  transform: rotate(-45deg);
+}
+
+/* O mark */
+.inner-box.circle::before,
+.inner-box.circle::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+.inner-box.circle::before {
+  width: var(--mark-size);
+  height: var(--mark-size);
+  background-color: black;
+}
+.inner-box.circle::after {
+  width: calc(var(--mark-size) * 0.7);
+  height: calc(var(--mark-size) * 0.7);
+  background-color: white;
 }
