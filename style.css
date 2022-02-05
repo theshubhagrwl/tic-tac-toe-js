@@ -13,6 +13,7 @@ body {
   align-items: center;
   justify-content: center;
   background-color: whitesmoke;
+  flex-direction: column;
 }
 
 .main-box {
@@ -85,4 +86,20 @@ body {
   width: calc(var(--mark-size) * 0.7);
   height: calc(var(--mark-size) * 0.7);
   background-color: white;
+}
+
+.winning-message {
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5vh;
+}
+
+.restart {
+  background-color: black;
+  padding: 10px;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
 }
